@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Fernandes Sites | Desenvolvedor Web & UI/UX</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        creme: {
+                            50: '#FAF8F5',
+                            100: '#F5F0E6',
+                            200: '#EBE2D3',
+                            300: '#DDD0BC',
+                        },
+                        oliva: {
+                            50: '#F3F5F2',
+                            100: '#E3E8E0',
+                            200: '#C5D1C0',
+                            400: '#7E9673',
+                            600: '#4A5D43',
+                            800: '#2D3A29',
+                            900: '#1D261A',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                        body: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #FAF8F5;
+            color: #1D261A;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(245, 240, 230, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(221, 208, 188, 0.5);
+        }
+        .custom-shadow {
+            box-shadow: 0 20px 40px -15px rgba(45, 58, 41, 0.08);
+        }
+        .custom-shadow-hover:hover {
+            box-shadow: 0 25px 50px -12px rgba(45, 58, 41, 0.18);
+        }
+        /* Mobile & Tablet Optimizations */
+        @media (max-width: 1024px) {
+            .mobile-touch-card .card-hover-overlay {
+                opacity: 1 !important;
+                background: rgba(45, 58, 41, 0.85) !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-creme-50 text-oliva-900 antialiased selection:bg-oliva-200 selection:text-oliva-900">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-40 bg-creme-50/95 backdrop-blur-md border-b border-creme-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-oliva-800 text-creme-50 flex items-center justify-center font-heading font-bold text-lg sm:text-xl shadow-md group-hover:bg-oliva-600 transition-colors shrink-0">
+                        GF
+                    </div>
+                    <div>
+                        <span class="font-heading font-bold text-base sm:text-lg text-oliva-900 block leading-tight">Gabriel Fernandes</span>
+                        <span class="text-[10px] sm:text-xs text-oliva-600 font-medium tracking-wider uppercase block">Sites & Soluções Digital</span>
+                    </div>
+                </a>
+
+                <!-- Desktop / Tablet Nav -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                    <a href="#portfolio" class="text-oliva-800 hover:text-oliva-600 transition-colors">Portfólio</a>
+                    <a href="#diferenciais" class="text-oliva-800 hover:text-oliva-600 transition-colors">Por que ter um site?</a>
+                    <a href="#orcamento" class="text-oliva-800 hover:text-oliva-600 transition-colors">Simular Projeto</a>
+                    <a href="#faq" class="text-oliva-800 hover:text-oliva-600 transition-colors">Dúvidas</a>
+                </nav>
+
+                <!-- CTA Button Header -->
+                <div class="hidden md:block">
+                    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+                       target="_blank" 
+                       class="inline-flex items-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-medium px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 text-xs sm:text-sm">
+                        <i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>
+                        <span>Solicitar Orçamento</span>
+                    </a>
+                </div>
+
+                <!-- Mobile & Tablet menu button -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2.5 rounded-xl text-oliva-800 bg-creme-100 hover:bg-creme-200 border border-creme-300 focus:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile & Tablet Menu dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-creme-50/98 border-b border-creme-300 px-4 pt-3 pb-6 space-y-3 shadow-xl backdrop-blur-lg">
+            <a href="#portfolio" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-oliva-900 hover:bg-creme-200/80 active:bg-creme-200">
+                <i class="fa-solid fa-laptop-code text-oliva-600 w-6"></i> Portfólio de Sites
+            </a>
+            <a href="#diferenciais" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-oliva-900 hover:bg-creme-200/80 active:bg-creme-200">
+                <i class="fa-solid fa-star text-oliva-600 w-6"></i> Por que ter um site?
+            </a>
+            <a href="#orcamento" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-oliva-900 hover:bg-creme-200/80 active:bg-creme-200">
+                <i class="fa-solid fa-calculator text-oliva-600 w-6"></i> Simular Orçamento
+            </a>
+            <a href="#faq" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-oliva-900 hover:bg-creme-200/80 active:bg-creme-200">
+                <i class="fa-solid fa-circle-question text-oliva-600 w-6"></i> Dúvidas Frequentes
+            </a>
+            <a href="https://wa.me/5585985313082?text=Ol%C3%A1%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 bg-oliva-800 text-creme-50 font-bold px-4 py-3.5 rounded-xl shadow-md w-full mt-4 text-sm active:scale-[0.98] transition-transform">
+                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                <span>Falar no WhatsApp Agora</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-8 pb-16 md:pt-20 md:pb-28 overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[500px] md:w-[600px] h-[320px] sm:h-[500px] md:h-[600px] bg-oliva-100/60 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-6 sm:space-y-8">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-oliva-100 border border-oliva-200 text-oliva-800 text-[11px] sm:text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-oliva-600 animate-pulse"></span>
+                    Desenvolvimento Web para Celulares e Tablets
+                </div>
+
+                <!-- Main Copy Headline -->
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-oliva-900 leading-[1.2] sm:leading-[1.15] tracking-tight">
+                    Seu negócio merece mais do que um site comum. <span class="italic text-oliva-600 font-normal underline decoration-oliva-200 decoration-wavy underline-offset-4 sm:underline-offset-8">Merece vender.</span>
+                </h1>
+
+                <!-- Body Copy -->
+                <p class="text-base sm:text-lg md:text-xl text-oliva-800/80 leading-relaxed font-normal max-w-2xl mx-auto px-2">
+                    Crio websites modernos, elegantes e preparados para converter visitantes em clientes pagantes. Design sob medida, navegação fluida e velocidade máxima no celular, tablet e computador.
+                </p>
+
+                <!-- Hero CTAs -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 px-4 sm:px-0">
+                    <a href="#portfolio" class="inline-flex items-center justify-center gap-3 bg-oliva-800 hover:bg-oliva-900 text-creme-50 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base min-h-[48px]">
+                        <span>Ver Projetos Criados</span>
+                        <i class="fa-solid fa-arrow-down text-xs sm:text-sm"></i>
+                    </a>
+                    
+                    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Gabriel!%20Quero%20criar%20um%20site%20para%20o%20meu%20neg%C3%B3cio." 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center gap-3 bg-creme-100 hover:bg-creme-200 border border-creme-300 text-oliva-900 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base min-h-[48px]">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                        <span>Conversar no WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Proof highlights -->
+                <div class="pt-8 sm:pt-10 grid grid-cols-3 gap-2 sm:gap-4 border-t border-creme-200/80 max-w-2xl mx-auto text-center">
+                    <div class="p-1 sm:p-2">
+                        <p class="text-xl sm:text-3xl font-bold font-heading text-oliva-900">100%</p>
+                        <p class="text-[11px] sm:text-sm text-oliva-800/70 font-medium leading-tight">Otimizado para Telas Mobile</p>
+                    </div>
+                    <div class="p-1 sm:p-2 border-x border-creme-200">
+                        <p class="text-xl sm:text-3xl font-bold font-heading text-oliva-900">&lt; 2 Segs</p>
+                        <p class="text-[11px] sm:text-sm text-oliva-800/70 font-medium leading-tight">Carregamento Rápido</p>
+                    </div>
+                    <div class="p-1 sm:p-2">
+                        <p class="text-xl sm:text-3xl font-bold font-heading text-oliva-900">Sob Medida</p>
+                        <p class="text-[11px] sm:text-sm text-oliva-800/70 font-medium leading-tight">Design Exclusivo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase Section -->
+    <section id="portfolio" class="py-12 sm:py-20 bg-creme-100/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-oliva-600 block mb-1 sm:mb-2">Trabalhos Recentes</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-oliva-900">
+                        Projetos Desenvolvidos
+                    </h2>
+                </div>
+                <p class="text-oliva-800/80 max-w-md text-sm sm:text-base">
+                    Confira alguns dos sites criados para marcas e negócios que buscaram uma presença digital profissional no celular e computador.
+                </p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+
+                <!-- PROJECT 1: Lunavie Semijoias -->
+                <div class="bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col group">
+                    <!-- Browser Header Mockup -->
+                    <div class="bg-oliva-800/5 px-3 sm:px-4 py-2.5 sm:py-3 border-b border-creme-200 flex items-center justify-between">
+                        <div class="flex items-center gap-1.5 sm:gap-2">
+                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-400 inline-block"></span>
+                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-400 inline-block"></span>
+                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-400 inline-block"></span>
+                        </div>
+                        <div class="bg-creme-100 text-[11px] sm:text-xs text-oliva-800/70 px-3 py-1 rounded-full font-mono truncate max-w-[170px] sm:max-w-xs text-center border border-creme-200">
+                            lunavie-semijoais.netlify.app
+                        </div>
+                        <i class="fa-solid fa-lock text-[10px] sm:text-xs text-oliva-600"></i>
+                    </div>
+
+                    <!-- Visual Preview Container -->
+                    <div class="relative bg-creme-200/50 h-56 sm:h-72 md:h-80 overflow-hidden flex items-center justify-center">
+                        <!-- Simulated Website Card Graphic -->
+                        <div class="w-11/12 h-5/6 bg-white rounded-t-xl shadow-lg border border-creme-200 p-3 sm:p-4 flex flex-col gap-2 sm:gap-3 overflow-hidden">
+                            <!-- Header mockup -->
+                            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+                                <span class="font-heading font-serif text-amber-900 font-bold text-xs sm:text-sm tracking-widest">LUNAVIE</span>
+                                <div class="flex gap-2 text-[10px] sm:text-xs text-stone-400">
+                                    <span>Home</span>
+                                    <span>Coleção</span>
+                                </div>
+                            </div>
+                            <!-- Banner mockup -->
+                            <div class="bg-amber-50 rounded-lg p-3 sm:p-4 flex flex-col justify-center items-start space-y-1.5 sm:space-y-2 relative overflow-hidden flex-1">
+                                <span class="text-[9px] sm:text-[10px] uppercase font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">Nova Coleção</span>
+                                <p class="font-serif text-sm sm:text-lg text-amber-950 font-bold leading-tight">Elegância em cada detalhe de semijoia</p>
+                                <div class="w-16 sm:w-20 h-4 sm:h-5 bg-amber-900 rounded text-[9px] sm:text-[10px] text-white flex items-center justify-center font-medium">Ver Produtos</div>
+                            </div>
+                        </div>
+
+                        <!-- Touch and Hover Overlay with Action Buttons -->
+                        <div class="absolute inset-0 bg-oliva-900/70 sm:bg-oliva-900/60 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 sm:gap-3 p-4 backdrop-blur-xs">
+                            <a href="https://app.netlify.com/projects/lunavie-semijoais/overview" 
+                               target="_blank" 
+                               class="bg-creme-50 text-oliva-900 font-bold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-md hover:bg-white transition-colors flex items-center gap-1.5 min-h-[40px]">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                <span>Acessar Site</span>
+                            </a>
+                            <button onclick="openPreviewModal('Lunavie Semijoias', 'https://app.netlify.com/projects/lunavie-semijoais/overview', 'E-commerce e Catálogo Luxo para marca de semijoias finas com design minimalista, alta conversão e foco no mobile.')"
+                                    class="bg-oliva-800 text-creme-50 font-bold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-md hover:bg-oliva-900 transition-colors flex items-center gap-1.5 min-h-[40px]">
+                                <i class="fa-solid fa-eye text-xs"></i>
+                                <span>Detalhes</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Content Info -->
+                    <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2 sm:mb-3">
+                                <span class="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-oliva-100 text-oliva-800 text-[11px] sm:text-xs font-semibold rounded-full">E-commerce / Catálogo</span>
+                                <span class="text-[11px] sm:text-xs text-oliva-600 font-medium"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> Netlify</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Lunavie Semijoias</h3>
+                            <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
+                                Plataforma elegante criada para destacar peças exclusivas com navegação intuitiva, catálogo dinâmico de produtos e experiência focada em dispositivos móveis.
+                            </p>
+                        </div>
+
+                        <div class="pt-4 border-t border-creme-200 flex items-center justify-between">
+                            <div class="flex gap-1.5 sm:gap-2">
+                                <span class="text-[11px] sm:text-xs bg-creme-200/70 text-oliva-800 px-2 py-1 rounded-md font-medium">UX/UI Elegante</span>
+                                <span class="text-[11px] sm:text-xs bg-creme-200/70 text-oliva-800 px-2 py-1 rounded-md font-medium">Catálogo Digital</span>
+                            </div>
+                            <a href="https://app.netlify.com/projects/lunavie-semijoais/overview" 
+                               target="_blank" 
+                               class="text-oliva-800 font-bold text-xs sm:text-sm hover:text-oliva-600 inline-flex items-center gap-1">
+                                Ver Site <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2: Dolce Legal Catálogo Digital -->
+                <div class="bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col group">
+                    <!-- Browser Header Mockup -->
+                    <div class="bg-oliva-800/5 px-3 sm:px-4 py-2.5 sm:py-3 border-b border-creme-200 flex items-center justify-between">
+                        <div class="flex items-center gap-1.5 sm:gap-2">
+                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-400 inline-block"></span>
+                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-400 inline-block"></span>
+                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-400 inline-block"></span>
+                        </div>
+                        <div class="bg-creme-100 text-[11px] sm:text-xs text-oliva-800/70 px-3 py-1 rounded-full font-mono truncate max-w-[170px] sm:max-w-xs text-center border border-creme-200">
+                            catalogo-digital-dolcelegal.vercel.app
+                        </div>
+                        <i class="fa-solid fa-lock text-[10px] sm:text-xs text-oliva-600"></i>
+                    </div>
+
+                    <!-- Visual Preview Container -->
+                    <div class="relative bg-creme-200/50 h-56 sm:h-72 md:h-80 overflow-hidden flex items-center justify-center">
+                        <!-- Simulated Website Card Graphic -->
+                        <div class="w-11/12 h-5/6 bg-rose-50/90 rounded-t-xl shadow-lg border border-rose-100 p-3 sm:p-4 flex flex-col gap-2 sm:gap-3 overflow-hidden">
+                            <!-- Header mockup -->
+                            <div class="flex items-center justify-between pb-2 border-b border-rose-200/50">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-rose-400 flex items-center justify-center text-[10px] text-white">🍰</div>
+                                    <span class="font-heading text-rose-950 font-bold text-xs sm:text-sm">Dolce Legal</span>
+                                </div>
+                                <span class="bg-emerald-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium">Aberto Agora</span>
+                            </div>
+                            <!-- Menu List Mockup -->
+                            <div class="space-y-1.5 sm:space-y-2 flex-1">
+                                <div class="bg-white p-2 rounded-lg border border-rose-100 flex items-center justify-between shadow-xs">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 h-6 sm:w-8 sm:h-8 rounded bg-rose-100 flex items-center justify-center text-xs">🧁</div>
+                                        <div>
+                                            <div class="w-12 sm:w-16 h-2 bg-rose-900/80 rounded mb-1"></div>
+                                            <div class="w-8 sm:w-10 h-1.5 bg-rose-300 rounded"></div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-bold text-rose-900">R$ 18,00</span>
+                                </div>
+                            </div>
+                            <div class="w-full bg-emerald-600 text-white py-1.5 sm:py-2 rounded-lg text-center text-[10px] sm:text-xs font-bold flex items-center justify-center gap-1">
+                                <i class="fa-brands fa-whatsapp"></i> Pedir no WhatsApp
+                            </div>
+                        </div>
+
+                        <!-- Touch and Hover Overlay with Action Buttons -->
+                        <div class="absolute inset-0 bg-oliva-900/70 sm:bg-oliva-900/60 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 sm:gap-3 p-4 backdrop-blur-xs">
+                            <a href="https://catalogo-digital-dolcelegal.vercel.app/" 
+                               target="_blank" 
+                               class="bg-creme-50 text-oliva-900 font-bold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-md hover:bg-white transition-colors flex items-center gap-1.5 min-h-[40px]">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                <span>Acessar Site</span>
+                            </a>
+                            <button onclick="openPreviewModal('Catálogo Digital Dolce Legal', 'https://catalogo-digital-dolcelegal.vercel.app/', 'Catálogo gastronômico digital ultrarrápido com cardápio interativo e envio direto de pedidos para o WhatsApp do estabelecimento.')"
+                                    class="bg-oliva-800 text-creme-50 font-bold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-md hover:bg-oliva-900 transition-colors flex items-center gap-1.5 min-h-[40px]">
+                                <i class="fa-solid fa-eye text-xs"></i>
+                                <span>Detalhes</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Content Info -->
+                    <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2 sm:mb-3">
+                                <span class="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-oliva-100 text-oliva-800 text-[11px] sm:text-xs font-semibold rounded-full">Gastronomia / Cardápio</span>
+                                <span class="text-[11px] sm:text-xs text-oliva-600 font-medium"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> Vercel</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Catálogo Digital Dolce Legal</h3>
+                            <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
+                                Cardápio interativo para doceria com pedido direto via WhatsApp. Otimizado para visualização veloz no celular do cliente sem necessidade de baixar apps.
+                            </p>
+                        </div>
+
+                        <div class="pt-4 border-t border-creme-200 flex items-center justify-between">
+                            <div class="flex gap-1.5 sm:gap-2">
+                                <span class="text-[11px] sm:text-xs bg-creme-200/70 text-oliva-800 px-2 py-1 rounded-md font-medium">Integração WhatsApp</span>
+                                <span class="text-[11px] sm:text-xs bg-creme-200/70 text-oliva-800 px-2 py-1 rounded-md font-medium">Ultra Leve</span>
+                            </div>
+                            <a href="https://catalogo-digital-dolcelegal.vercel.app/" 
+                               target="_blank" 
+                               class="text-oliva-800 font-bold text-xs sm:text-sm hover:text-oliva-600 inline-flex items-center gap-1">
+                                Ver Site <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Custom Quote CTA Callout -->
+            <div class="mt-12 sm:mt-16 bg-oliva-800 text-creme-50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 shadow-xl">
+                <div class="space-y-2 sm:space-y-3 text-center md:text-left z-10 max-w-xl">
+                    <span class="text-oliva-200 text-xs font-bold uppercase tracking-widest">Sua marca é a próxima</span>
+                    <h3 class="text-xl sm:text-3xl font-extrabold font-heading">Quer um site exclusivo como estes para o seu negócio?</h3>
+                    <p class="text-creme-200 text-xs sm:text-base">
+                        Entregamos a estrutura completa pronta para divulgar sua empresa, atrair novos clientes e profissionalizar sua imagem na internet.
+                    </p>
+                </div>
+                <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Gabriel!%20Gostei%20dos%20seus%20projetos%20e%20quero%20criar%20um%20site%20para%20mim." 
+                   target="_blank" 
+                   class="z-10 bg-creme-100 hover:bg-white text-oliva-900 font-bold px-6 py-3.5 sm:px-8 sm:py-4 rounded-full transition-all duration-300 text-center shrink-0 shadow-md text-sm sm:text-base w-full md:w-auto min-h-[48px] flex items-center justify-center">
+                    <i class="fa-brands fa-whatsapp text-emerald-700 mr-2 text-lg"></i>
+                    Fazer Meu Site Agora
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Benefits / Why Me Section -->
+    <section id="diferenciais" class="py-14 sm:py-24 bg-creme-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-oliva-600">Por Que Investir?</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-oliva-900">
+                    O que seu novo site terá de especial?
+                </h2>
+                <p class="text-oliva-800/80 text-sm sm:text-base">
+                    Desenvolvimento focado em passar credibilidade, gerar contatos diários e transformar visitantes em vendas reais.
+                </p>
+            </div>
+
+            <!-- Grid 1 col (mobile) -> 2 cols (tablet) -> 3 cols (desktop) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                
+                <!-- Benefit 1 -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-creme-100/70 border border-creme-200 space-y-3 sm:space-y-4">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-oliva-800 text-creme-50 flex items-center justify-center text-lg sm:text-xl shadow-sm">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-heading text-oliva-900">100% Responsivo</h3>
+                    <p class="text-xs sm:text-sm text-oliva-800/80 leading-relaxed">
+                        Mais de 80% das visitas virão do celular ou tablet. Seu site se adapta com perfeição a qualquer tamanho de tela.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-creme-100/70 border border-creme-200 space-y-3 sm:space-y-4">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-oliva-800 text-creme-50 flex items-center justify-center text-lg sm:text-xl shadow-sm">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-heading text-oliva-900">Carregamento Veloz</h3>
+                    <p class="text-xs sm:text-sm text-oliva-800/80 leading-relaxed">
+                        Sites lentos fazem clientes desistirem da compra. Código limpo e otimizado para abrir instantaneamente.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-creme-100/70 border border-creme-200 space-y-3 sm:space-y-4">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-oliva-800 text-creme-50 flex items-center justify-center text-lg sm:text-xl shadow-sm">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-heading text-oliva-900">Botão de WhatsApp Direto</h3>
+                    <p class="text-xs sm:text-sm text-oliva-800/80 leading-relaxed">
+                        Facilite o contato do cliente. Chamadas para ação inteligentes que levam a conversa direto para seu atendimento.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-creme-100/70 border border-creme-200 space-y-3 sm:space-y-4">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-oliva-800 text-creme-50 flex items-center justify-center text-lg sm:text-xl shadow-sm">
+                        <i class="fa-solid fa-magnifying-glass font-bold"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-heading text-oliva-900">Otimizado para o Google (SEO)</h3>
+                    <p class="text-xs sm:text-sm text-oliva-800/80 leading-relaxed">
+                        Estrutura preparada para indexação no Google, permitindo que potenciais clientes encontrem seu negócio organicamente.
+                    </p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-creme-100/70 border border-creme-200 space-y-3 sm:space-y-4">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-oliva-800 text-creme-50 flex items-center justify-center text-lg sm:text-xl shadow-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-heading text-oliva-900">Design Exclusivo e Autoral</h3>
+                    <p class="text-xs sm:text-sm text-oliva-800/80 leading-relaxed">
+                        Nada de modelos genéricos ou mal acabados. Visual pensado especificamente no seu público-alvo e na sua identidade.
+                    </p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-creme-100/70 border border-creme-200 space-y-3 sm:space-y-4">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-oliva-800 text-creme-50 flex items-center justify-center text-lg sm:text-xl shadow-sm">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-heading text-oliva-900">Suporte Pós-Entrega</h3>
+                    <p class="text-xs sm:text-sm text-oliva-800/80 leading-relaxed">
+                        Não abandono você após o lançamento. Ofereço orientação e suporte para tirar dúvidas e manter seu site rodando perfeitamente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Project Budget Estimator -->
+    <section id="orcamento" class="py-14 sm:py-20 bg-creme-100/80 border-t border-b border-creme-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 sm:space-y-4 mb-8 sm:mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-oliva-600">Monte Seu Projeto</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-oliva-900">
+                    Simulador Rápido de Orçamento
+                </h2>
+                <p class="text-oliva-800/80 text-xs sm:text-base">
+                    Selecione o que você precisa abaixo para receber uma estimativa personalizada sem compromisso direto no WhatsApp.
+                </p>
+            </div>
+
+            <div class="bg-creme-50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-creme-300 shadow-lg space-y-6 sm:space-y-8">
+                <!-- Step 1: Tipo de site -->
+                <div>
+                    <label class="block text-xs sm:text-sm font-bold text-oliva-900 mb-3">1. Qual tipo de site você precisa?</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3" id="siteTypeContainer">
+                        <button type="button" onclick="selectOption('siteType', 'Landing Page de Vendas')" class="calc-btn p-3.5 sm:p-4 rounded-xl border border-creme-300 text-left hover:border-oliva-600 transition-all font-medium text-xs sm:text-sm text-oliva-900 bg-white min-h-[52px]">
+                            <i class="fa-solid fa-bullseye text-oliva-600 mb-1 sm:mb-2 block text-base sm:text-lg"></i>
+                            <strong>Landing Page</strong>
+                            <span class="block text-[11px] text-oliva-800/60 font-normal mt-0.5 sm:mt-1">Ideal para campanhas e vendas rápidas</span>
+                        </button>
+                        <button type="button" onclick="selectOption('siteType', 'Catálogo Digital / Cardápio')" class="calc-btn p-3.5 sm:p-4 rounded-xl border border-creme-300 text-left hover:border-oliva-600 transition-all font-medium text-xs sm:text-sm text-oliva-900 bg-white min-h-[52px]">
+                            <i class="fa-solid fa-store text-oliva-600 mb-1 sm:mb-2 block text-base sm:text-lg"></i>
+                            <strong>Catálogo Digital</strong>
+                            <span class="block text-[11px] text-oliva-800/60 font-normal mt-0.5 sm:mt-1">Exibir produtos e pedidos via WhatsApp</span>
+                        </button>
+                        <button type="button" onclick="selectOption('siteType', 'Site Institucional Completo')" class="calc-btn p-3.5 sm:p-4 rounded-xl border border-creme-300 text-left hover:border-oliva-600 transition-all font-medium text-xs sm:text-sm text-oliva-900 bg-white min-h-[52px]">
+                            <i class="fa-solid fa-building text-oliva-600 mb-1 sm:mb-2 block text-base sm:text-lg"></i>
+                            <strong>Site Institucional</strong>
+                            <span class="block text-[11px] text-oliva-800/60 font-normal mt-0.5 sm:mt-1">Múltiplas páginas para serviços e empresas</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Funcionalidades -->
+                <div>
+                    <label class="block text-xs sm:text-sm font-bold text-oliva-900 mb-3">2. Recursos desejados:</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3">
+                        <label class="flex items-center gap-2.5 p-3 bg-white rounded-xl border border-creme-300 text-xs font-medium text-oliva-900 cursor-pointer min-h-[44px]">
+                            <input type="checkbox" value="Integração WhatsApp" class="feature-check text-oliva-800 rounded focus:ring-oliva-600 w-4 h-4">
+                            <span>Botão WhatsApp</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 p-3 bg-white rounded-xl border border-creme-300 text-xs font-medium text-oliva-900 cursor-pointer min-h-[44px]">
+                            <input type="checkbox" value="Domínio Próprio" class="feature-check text-oliva-800 rounded focus:ring-oliva-600 w-4 h-4">
+                            <span>Domínio .com.br</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 p-3 bg-white rounded-xl border border-creme-300 text-xs font-medium text-oliva-900 cursor-pointer min-h-[44px]">
+                            <input type="checkbox" value="Formulário de Contato" class="feature-check text-oliva-800 rounded focus:ring-oliva-600 w-4 h-4">
+                            <span>Formulário</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 p-3 bg-white rounded-xl border border-creme-300 text-xs font-medium text-oliva-900 cursor-pointer min-h-[44px]">
+                            <input type="checkbox" value="Otimização SEO" class="feature-check text-oliva-800 rounded focus:ring-oliva-600 w-4 h-4">
+                            <span>SEO no Google</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 3: Nome da empresa -->
+                <div>
+                    <label for="clientName" class="block text-xs sm:text-sm font-bold text-oliva-900 mb-2">3. Nome da sua empresa ou negócio:</label>
+                    <input type="text" id="clientName" placeholder="Ex: Minha Loja / Meu Consultório" class="w-full p-3.5 bg-white rounded-xl border border-creme-300 text-xs sm:text-sm focus:outline-none focus:border-oliva-600 min-h-[44px]">
+                </div>
+
+                <!-- CTA Submit Button -->
+                <button onclick="sendCalculatedBudget()" class="w-full py-4 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm sm:text-base min-h-[48px]">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                    <span>Enviar Orçamento Direto para Gabriel</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <!-- Floating WhatsApp Action Button for Mobile/Tablet -->
+    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento."
+       target="_blank"
+       aria-label="Contato via WhatsApp"
+       class="fixed bottom-5 right-5 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-13 h-13 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 border-2 border-white">
+        <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
+    </a>
+
+    <!-- Scripts for Interactivity -->
+    <script>
+        // Mobile & Tablet Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Selected option state for budget simulator
+        let selectedSiteType = '';
+
+        function selectOption(category, value) {
+            if (category === 'siteType') {
+                selectedSiteType = value;
+                const buttons = document.querySelectorAll('#siteTypeContainer .calc-btn');
+                buttons.forEach(btn => {
+                    btn.classList.remove('border-oliva-800', 'bg-oliva-100/50', 'ring-2', 'ring-oliva-600');
+                    if (btn.innerText.includes(value.split(' ')[0])) {
+                        btn.classList.add('border-oliva-800', 'bg-oliva-100/50', 'ring-2', 'ring-oliva-600');
+                    }
+                });
+            }
+        }
+
+        // WhatsApp Budget Link Generator
+        function sendCalculatedBudget() {
+            const clientName = document.getElementById('clientName').value.trim() || 'Não informado';
+            
+            // Selected checkboxes
+            const checkboxes = document.querySelectorAll('.feature-check:checked');
+            const features = Array.from(checkboxes).map(cb => cb.value).join(', ') || 'Padrão';
+
+            const site = selectedSiteType || 'Site Personalizado';
+
+            const message = `Olá Gabriel! Solicitação de Orçamento pelo Portfólio:
+- Nome/Empresa: ${clientName}
+- Tipo de Projeto: ${site}
+- Recursos Desejados: ${features}
+
+Gostaria de saber valores e disponibilidade de prazo!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/5500000000000?text=${encodedMessage}`, '_blank');
+        }
+
+        // Preview Modal Handlers
+        function openPreviewModal(title, url, description) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalLiveLink').href = url;
+            document.getElementById('previewModal').classList.remove('hidden');
+        }
+
+        function closePreviewModal() {
+            document.getElementById('previewModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
