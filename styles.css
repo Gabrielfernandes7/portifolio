@@ -1,0 +1,34 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #FAF8F5;
+    color: #1D261A;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.glass-card {
+    background: rgba(245, 240, 230, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(221, 208, 188, 0.5);
+}
+
+.custom-shadow {
+    box-shadow: 0 20px 40px -15px rgba(45, 58, 41, 0.08);
+}
+
+.custom-shadow-hover:hover {
+    box-shadow: 0 25px 50px -12px rgba(45, 58, 41, 0.18);
+}
+
+@media (max-width: 1024px) {
+    .mobile-touch-card .card-hover-overlay {
+        opacity: 1 !important;
+        background: rgba(45, 58, 41, 0.85) !important;
+    }
+}

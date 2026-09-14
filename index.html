@@ -10,70 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS and App Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        creme: {
-                            50: '#FAF8F5',
-                            100: '#F5F0E6',
-                            200: '#EBE2D3',
-                            300: '#DDD0BC',
-                        },
-                        oliva: {
-                            50: '#F3F5F2',
-                            100: '#E3E8E0',
-                            200: '#C5D1C0',
-                            400: '#7E9673',
-                            600: '#4A5D43',
-                            800: '#2D3A29',
-                            900: '#1D261A',
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['Plus Jakarta Sans', 'sans-serif'],
-                        body: ['DM Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: #FAF8F5;
-            color: #1D261A;
-        }
-        h1, h2, h3, h4, .font-heading {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        .glass-card {
-            background: rgba(245, 240, 230, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(221, 208, 188, 0.5);
-        }
-        .custom-shadow {
-            box-shadow: 0 20px 40px -15px rgba(45, 58, 41, 0.08);
-        }
-        .custom-shadow-hover:hover {
-            box-shadow: 0 25px 50px -12px rgba(45, 58, 41, 0.18);
-        }
-        /* Mobile & Tablet Optimizations */
-        @media (max-width: 1024px) {
-            .mobile-touch-card .card-hover-overlay {
-                opacity: 1 !important;
-                background: rgba(45, 58, 41, 0.85) !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-creme-50 text-oliva-900 antialiased selection:bg-oliva-200 selection:text-oliva-900">
 
@@ -102,7 +46,7 @@
 
                 <!-- CTA Button Header -->
                 <div class="hidden md:block">
-                    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+                    <a href="https://wa.me/5585985313082?text=Ol%C3%A1%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento."
                        target="_blank" 
                        class="inline-flex items-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-medium px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 text-xs sm:text-sm">
                         <i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>
@@ -171,7 +115,7 @@
                         <i class="fa-solid fa-arrow-down text-xs sm:text-sm"></i>
                     </a>
                     
-                    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Gabriel!%20Quero%20criar%20um%20site%20para%20o%20meu%20neg%C3%B3cio." 
+                    <a href="https://wa.me/5585985313082?text=Ol%C3%A1%20Gabriel!%20Quero%20criar%20um%20site%20para%20o%20meu%20neg%C3%B3cio."
                        target="_blank" 
                        class="inline-flex items-center justify-center gap-3 bg-creme-100 hover:bg-creme-200 border border-creme-300 text-oliva-900 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base min-h-[48px]">
                         <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
@@ -391,10 +335,10 @@
                     <span class="text-oliva-200 text-xs font-bold uppercase tracking-widest">Sua marca é a próxima</span>
                     <h3 class="text-xl sm:text-3xl font-extrabold font-heading">Quer um site exclusivo como estes para o seu negócio?</h3>
                     <p class="text-creme-200 text-xs sm:text-base">
-                        Entregamos a estrutura completa pronta para divulgar sua empresa, atrair novos clientes e profissionalizar sua imagem na internet.
+                        Entregamos a estrutura completa pronta para divulgar sua empresa, atrair potenciais clientes e profissionalizar sua imagem na internet.
                     </p>
                 </div>
-                <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Gabriel!%20Gostei%20dos%20seus%20projetos%20e%20quero%20criar%20um%20site%20para%20mim." 
+                <a href="https://wa.me/5585985313082?text=Ol%C3%A1%20Gabriel!%20Gostei%20dos%20seus%20projetos%20e%20quero%20criar%20um%20site%20para%20mim."
                    target="_blank" 
                    class="z-10 bg-creme-100 hover:bg-white text-oliva-900 font-bold px-6 py-3.5 sm:px-8 sm:py-4 rounded-full transition-all duration-300 text-center shrink-0 shadow-md text-sm sm:text-base w-full md:w-auto min-h-[48px] flex items-center justify-center">
                     <i class="fa-brands fa-whatsapp text-emerald-700 mr-2 text-lg"></i>
@@ -565,77 +509,53 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <footer class="bg-oliva-900 text-creme-50 border-t border-oliva-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                <div class="space-y-2 max-w-md">
+                    <a href="#" class="inline-flex items-center gap-3 group">
+                        <div class="w-10 h-10 rounded-xl bg-creme-50 text-oliva-900 flex items-center justify-center font-heading font-bold text-lg shadow-md group-hover:bg-creme-200 transition-colors shrink-0">
+                            GF
+                        </div>
+                        <div>
+                            <span class="font-heading font-bold text-base sm:text-lg block leading-tight">Gabriel Fernandes</span>
+                            <span class="text-[10px] sm:text-xs text-creme-200 font-medium tracking-wider uppercase block">Sites & Soluções Digital</span>
+                        </div>
+                    </a>
+                    <p class="text-sm text-creme-200 leading-relaxed">
+                        Sites sob medida para negócios que precisam aparecer melhor, gerar confiança e transformar visitas em conversas reais.
+                    </p>
+                </div>
+
+                <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium" aria-label="Links do rodapé">
+                    <a href="#portfolio" class="text-creme-200 hover:text-creme-50 transition-colors">Portfólio</a>
+                    <a href="#diferenciais" class="text-creme-200 hover:text-creme-50 transition-colors">Por que ter um site?</a>
+                    <a href="#orcamento" class="text-creme-200 hover:text-creme-50 transition-colors">Simular Projeto</a>
+                </nav>
+
+                <a href="https://wa.me/5585985313082?text=Ol%C3%A1%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center gap-2 bg-creme-50 hover:bg-white text-oliva-900 font-bold px-5 py-3 rounded-full shadow-md transition-all text-sm min-h-[44px] w-full sm:w-auto">
+                    <i class="fa-brands fa-whatsapp text-emerald-700 text-lg"></i>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+
+            <div class="mt-7 pt-5 border-t border-creme-50/10 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-xs text-creme-200/80">
+                <p>&copy; 2026 Gabriel Fernandes. Todos os direitos reservados.</p>
+                <p>Desenvolvimento web com foco em clareza, velocidade e conversão.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Floating WhatsApp Action Button for Mobile/Tablet -->
-    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento."
+    <a href="https://wa.me/5585985313082?text=Ol%C3%A1%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento."
        target="_blank"
        aria-label="Contato via WhatsApp"
        class="fixed bottom-5 right-5 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-13 h-13 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 border-2 border-white">
         <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
     </a>
 
-    <!-- Scripts for Interactivity -->
-    <script>
-        // Mobile & Tablet Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        function closeMobileMenu() {
-            mobileMenu.classList.add('hidden');
-        }
-
-        // Selected option state for budget simulator
-        let selectedSiteType = '';
-
-        function selectOption(category, value) {
-            if (category === 'siteType') {
-                selectedSiteType = value;
-                const buttons = document.querySelectorAll('#siteTypeContainer .calc-btn');
-                buttons.forEach(btn => {
-                    btn.classList.remove('border-oliva-800', 'bg-oliva-100/50', 'ring-2', 'ring-oliva-600');
-                    if (btn.innerText.includes(value.split(' ')[0])) {
-                        btn.classList.add('border-oliva-800', 'bg-oliva-100/50', 'ring-2', 'ring-oliva-600');
-                    }
-                });
-            }
-        }
-
-        // WhatsApp Budget Link Generator
-        function sendCalculatedBudget() {
-            const clientName = document.getElementById('clientName').value.trim() || 'Não informado';
-            
-            // Selected checkboxes
-            const checkboxes = document.querySelectorAll('.feature-check:checked');
-            const features = Array.from(checkboxes).map(cb => cb.value).join(', ') || 'Padrão';
-
-            const site = selectedSiteType || 'Site Personalizado';
-
-            const message = `Olá Gabriel! Solicitação de Orçamento pelo Portfólio:
-- Nome/Empresa: ${clientName}
-- Tipo de Projeto: ${site}
-- Recursos Desejados: ${features}
-
-Gostaria de saber valores e disponibilidade de prazo!`;
-
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/5500000000000?text=${encodedMessage}`, '_blank');
-        }
-
-        // Preview Modal Handlers
-        function openPreviewModal(title, url, description) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDescription').innerText = description;
-            document.getElementById('modalLiveLink').href = url;
-            document.getElementById('previewModal').classList.remove('hidden');
-        }
-
-        function closePreviewModal() {
-            document.getElementById('previewModal').classList.add('hidden');
-        }
-    </script>
 </body>
 </html>
