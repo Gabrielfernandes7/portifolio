@@ -76,28 +76,3 @@ Gostaria de saber valores e disponibilidade de prazo!`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/5585985313082?text=${encodedMessage}`, '_blank');
 }
-
-function openPreviewModal(title, url, description) {
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
-    const modalLiveLink = document.getElementById('modalLiveLink');
-    const previewModal = document.getElementById('previewModal');
-
-    if (modalTitle) {
-        modalTitle.innerText = title;
-    }
-
-    if (modalDescription) {
-        modalDescription.innerText = description;
-    }
-
-    if (modalLiveLink) {
-        modalLiveLink.href = url;
-    }
-
-    previewModal?.classList.remove('hidden');
-}
-
-function closePreviewModal() {
-    document.getElementById('previewModal')?.classList.add('hidden');
-}

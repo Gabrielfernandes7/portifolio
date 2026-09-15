@@ -41,7 +41,7 @@
                     <a href="#portfolio" class="text-oliva-800 hover:text-oliva-600 transition-colors">Portfólio</a>
                     <a href="#diferenciais" class="text-oliva-800 hover:text-oliva-600 transition-colors">Por que ter um site?</a>
                     <a href="#orcamento" class="text-oliva-800 hover:text-oliva-600 transition-colors">Planejar meu site</a>
-                    <a href="#orcamento" class="text-oliva-800 hover:text-oliva-600 transition-colors">Dúvidas e orçamento</a>
+                    <a href="#duvidas-orcamento" class="text-oliva-800 hover:text-oliva-600 transition-colors">Dúvidas e orçamento</a>
                 </nav>
 
                 <!-- CTA Button Header -->
@@ -72,7 +72,7 @@
             <a href="#orcamento" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-oliva-900 hover:bg-creme-200/80 active:bg-creme-200">
                 <i class="fa-solid fa-calculator text-oliva-600 w-6"></i> Simular Orçamento
             </a>
-            <a href="#orcamento" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-oliva-900 hover:bg-creme-200/80 active:bg-creme-200">
+            <a href="#duvidas-orcamento" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-oliva-900 hover:bg-creme-200/80 active:bg-creme-200">
                 <i class="fa-solid fa-circle-question text-oliva-600 w-6"></i> Dúvidas e orçamento
             </a>
             <a href="https://wa.me/5585985313082?text=Ol%C3%A1%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento."
@@ -200,170 +200,44 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
 
                 <!-- PROJECT 1: Lunavie Semijoias -->
-                <div class="bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col group">
-                    <!-- Browser Header Mockup -->
-                    <div class="bg-oliva-800/5 px-3 sm:px-4 py-2.5 sm:py-3 border-b border-creme-200 flex items-center justify-between">
-                        <div class="flex items-center gap-1.5 sm:gap-2">
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-400 inline-block"></span>
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-400 inline-block"></span>
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-400 inline-block"></span>
+                <article class="bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col">
+                    <div class="min-h-44 sm:min-h-56 bg-amber-50 border-b border-amber-100 px-6 sm:px-8 py-7 sm:py-9 flex flex-col justify-between">
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-xs font-bold uppercase tracking-widest text-amber-800">Catálogo digital</span>
+                            <i class="fa-solid fa-gem text-amber-700 text-xl sm:text-2xl" aria-hidden="true"></i>
                         </div>
-                        <div class="bg-creme-100 text-[11px] sm:text-xs text-oliva-800/70 px-3 py-1 rounded-full font-mono truncate max-w-[170px] sm:max-w-xs text-center border border-creme-200">
-                            lunavie-semijoais.netlify.app
-                        </div>
-                        <i class="fa-solid fa-lock text-[10px] sm:text-xs text-oliva-600"></i>
+                        <p class="font-heading text-2xl sm:text-3xl font-bold text-amber-950 max-w-sm">Produtos apresentados com delicadeza e clareza.</p>
                     </div>
-
-                    <!-- Visual Preview Container -->
-                    <div class="relative bg-creme-200/50 h-56 sm:h-72 md:h-80 overflow-hidden flex items-center justify-center">
-                        <!-- Simulated Website Card Graphic -->
-                        <div class="w-11/12 h-5/6 bg-white rounded-t-xl shadow-lg border border-creme-200 p-3 sm:p-4 flex flex-col gap-2 sm:gap-3 overflow-hidden">
-                            <!-- Header mockup -->
-                            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
-                                <span class="font-heading font-serif text-amber-900 font-bold text-xs sm:text-sm tracking-widest">LUNAVIE</span>
-                                <div class="flex gap-2 text-[10px] sm:text-xs text-stone-400">
-                                    <span>Home</span>
-                                    <span>Coleção</span>
-                                </div>
-                            </div>
-                            <!-- Banner mockup -->
-                            <div class="bg-amber-50 rounded-lg p-3 sm:p-4 flex flex-col justify-center items-start space-y-1.5 sm:space-y-2 relative overflow-hidden flex-1">
-                                <span class="text-[9px] sm:text-[10px] uppercase font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">Nova Coleção</span>
-                                <p class="font-serif text-sm sm:text-lg text-amber-950 font-bold leading-tight">Elegância em cada detalhe de semijoia</p>
-                                <div class="w-16 sm:w-20 h-4 sm:h-5 bg-amber-900 rounded text-[9px] sm:text-[10px] text-white flex items-center justify-center font-medium">Ver Produtos</div>
-                            </div>
-                        </div>
-
-                        <!-- Touch and Hover Overlay with Action Buttons -->
-                        <div class="absolute inset-0 bg-oliva-900/70 sm:bg-oliva-900/60 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 sm:gap-3 p-4 backdrop-blur-xs">
-                            <a href="https://lunavie-semijoais.netlify.app"
-                               target="_blank" 
-                               class="bg-creme-50 text-oliva-900 font-bold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-md hover:bg-white transition-colors flex items-center gap-1.5 min-h-[40px]">
-                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                                <span>Acessar Site</span>
-                            </a>
-                            <button onclick="openPreviewModal('Lunavie Semijoias', 'https://lunavie-semijoais.netlify.app/', 'Catálogo digital para uma marca de semijoias, com visual delicado, navegação simples e apresentação dos produtos.')"
-                                    class="bg-oliva-800 text-creme-50 font-bold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-md hover:bg-oliva-900 transition-colors flex items-center gap-1.5 min-h-[40px]">
-                                <i class="fa-solid fa-eye text-xs"></i>
-                                <span>Detalhes</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Project Content Info -->
-                    <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between">
+                    <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between gap-6">
                         <div>
-                            <div class="flex items-center justify-between mb-2 sm:mb-3">
-                                <span class="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-oliva-100 text-oliva-800 text-[11px] sm:text-xs font-semibold rounded-full">E-commerce / Catálogo</span>
-                                <span class="text-[11px] sm:text-xs text-oliva-600 font-medium"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> Netlify</span>
-                            </div>
                             <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Lunavie Semijoias</h3>
-                            <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
-                                Catálogo digital criado para destacar as peças da marca com visual delicado, navegação simples e apresentação organizada dos produtos.
-                            </p>
+                            <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed">Catálogo digital criado para destacar as peças da marca e facilitar a descoberta dos produtos.</p>
                         </div>
-
-                        <div class="pt-4 border-t border-creme-200 flex items-center justify-between">
-                            <div class="flex gap-1.5 sm:gap-2">
-                                <span class="text-[11px] sm:text-xs bg-creme-200/70 text-oliva-800 px-2 py-1 rounded-md font-medium">UX/UI Elegante</span>
-                                <span class="text-[11px] sm:text-xs bg-creme-200/70 text-oliva-800 px-2 py-1 rounded-md font-medium">Catálogo Digital</span>
-                            </div>
-                            <a href="https://lunavie-semijoais.netlify.app/"
-                               target="_blank" 
-                               class="text-oliva-800 font-bold text-xs sm:text-sm hover:text-oliva-600 inline-flex items-center gap-1">
-                                Ver Site <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </a>
-                        </div>
+                        <a href="https://lunavie-semijoais.netlify.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-bold px-5 py-3 rounded-xl transition-colors text-sm min-h-[44px]">
+                            Conhecer este projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                        </a>
                     </div>
-                </div>
+                </article>
 
                 <!-- PROJECT 2: Dolce Legal Catálogo Digital -->
-                <div class="bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col group">
-                    <!-- Browser Header Mockup -->
-                    <div class="bg-oliva-800/5 px-3 sm:px-4 py-2.5 sm:py-3 border-b border-creme-200 flex items-center justify-between">
-                        <div class="flex items-center gap-1.5 sm:gap-2">
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-400 inline-block"></span>
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-400 inline-block"></span>
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-400 inline-block"></span>
+                <article class="bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col">
+                    <div class="min-h-44 sm:min-h-56 bg-rose-50 border-b border-rose-100 px-6 sm:px-8 py-7 sm:py-9 flex flex-col justify-between">
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-xs font-bold uppercase tracking-widest text-rose-800">Cardápio digital</span>
+                            <i class="fa-solid fa-cake-candles text-rose-700 text-xl sm:text-2xl" aria-hidden="true"></i>
                         </div>
-                        <div class="bg-creme-100 text-[11px] sm:text-xs text-oliva-800/70 px-3 py-1 rounded-full font-mono truncate max-w-[170px] sm:max-w-xs text-center border border-creme-200">
-                            catalogo-digital-dolcelegal.vercel.app
-                        </div>
-                        <i class="fa-solid fa-lock text-[10px] sm:text-xs text-oliva-600"></i>
+                        <p class="font-heading text-2xl sm:text-3xl font-bold text-rose-950 max-w-sm">Um caminho simples entre o produto e o pedido.</p>
                     </div>
-
-                    <!-- Visual Preview Container -->
-                    <div class="relative bg-creme-200/50 h-56 sm:h-72 md:h-80 overflow-hidden flex items-center justify-center">
-                        <!-- Simulated Website Card Graphic -->
-                        <div class="w-11/12 h-5/6 bg-rose-50/90 rounded-t-xl shadow-lg border border-rose-100 p-3 sm:p-4 flex flex-col gap-2 sm:gap-3 overflow-hidden">
-                            <!-- Header mockup -->
-                            <div class="flex items-center justify-between pb-2 border-b border-rose-200/50">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-rose-400 flex items-center justify-center text-[10px] text-white">🍰</div>
-                                    <span class="font-heading text-rose-950 font-bold text-xs sm:text-sm">Dolce Legal</span>
-                                </div>
-                                <span class="bg-emerald-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium">Aberto Agora</span>
-                            </div>
-                            <!-- Menu List Mockup -->
-                            <div class="space-y-1.5 sm:space-y-2 flex-1">
-                                <div class="bg-white p-2 rounded-lg border border-rose-100 flex items-center justify-between shadow-xs">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-6 h-6 sm:w-8 sm:h-8 rounded bg-rose-100 flex items-center justify-center text-xs">🧁</div>
-                                        <div>
-                                            <div class="w-12 sm:w-16 h-2 bg-rose-900/80 rounded mb-1"></div>
-                                            <div class="w-8 sm:w-10 h-1.5 bg-rose-300 rounded"></div>
-                                        </div>
-                                    </div>
-                                    <span class="text-xs font-bold text-rose-900">R$ 18,00</span>
-                                </div>
-                            </div>
-                            <div class="w-full bg-emerald-600 text-white py-1.5 sm:py-2 rounded-lg text-center text-[10px] sm:text-xs font-bold flex items-center justify-center gap-1">
-                                <i class="fa-brands fa-whatsapp"></i> Pedir no WhatsApp
-                            </div>
-                        </div>
-
-                        <!-- Touch and Hover Overlay with Action Buttons -->
-                        <div class="absolute inset-0 bg-oliva-900/70 sm:bg-oliva-900/60 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 sm:gap-3 p-4 backdrop-blur-xs">
-                            <a href="https://catalogo-digital-dolcelegal.vercel.app/" 
-                               target="_blank" 
-                               class="bg-creme-50 text-oliva-900 font-bold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-md hover:bg-white transition-colors flex items-center gap-1.5 min-h-[40px]">
-                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                                <span>Acessar Site</span>
-                            </a>
-                            <button onclick="openPreviewModal('Catálogo Digital Dolce Legal', 'https://catalogo-digital-dolcelegal.vercel.app/', 'Cardápio digital para doceria, com produtos organizados e caminho simples para fazer um pedido pelo WhatsApp.')"
-                                    class="bg-oliva-800 text-creme-50 font-bold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm shadow-md hover:bg-oliva-900 transition-colors flex items-center gap-1.5 min-h-[40px]">
-                                <i class="fa-solid fa-eye text-xs"></i>
-                                <span>Detalhes</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Project Content Info -->
-                    <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between">
+                    <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between gap-6">
                         <div>
-                            <div class="flex items-center justify-between mb-2 sm:mb-3">
-                                <span class="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-oliva-100 text-oliva-800 text-[11px] sm:text-xs font-semibold rounded-full">Gastronomia / Cardápio</span>
-                                <span class="text-[11px] sm:text-xs text-oliva-600 font-medium"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> Vercel</span>
-                            </div>
                             <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Catálogo Digital Dolce Legal</h3>
-                            <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
-                                Cardápio digital para doceria com produtos organizados e pedido direto pelo WhatsApp, sem necessidade de baixar aplicativos.
-                            </p>
+                            <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed">Cardápio digital para doceria com produtos organizados e pedido direto pelo WhatsApp.</p>
                         </div>
-
-                        <div class="pt-4 border-t border-creme-200 flex items-center justify-between">
-                            <div class="flex gap-1.5 sm:gap-2">
-                                <span class="text-[11px] sm:text-xs bg-creme-200/70 text-oliva-800 px-2 py-1 rounded-md font-medium">Integração WhatsApp</span>
-                                <span class="text-[11px] sm:text-xs bg-creme-200/70 text-oliva-800 px-2 py-1 rounded-md font-medium">Ultra Leve</span>
-                            </div>
-                            <a href="https://catalogo-digital-dolcelegal.vercel.app/" 
-                               target="_blank" 
-                               class="text-oliva-800 font-bold text-xs sm:text-sm hover:text-oliva-600 inline-flex items-center gap-1">
-                                Ver Site <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </a>
-                        </div>
+                        <a href="https://catalogo-digital-dolcelegal.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-bold px-5 py-3 rounded-xl transition-colors text-sm min-h-[44px]">
+                            Conhecer este projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                        </a>
                     </div>
-                </div>
+                </article>
 
             </div>
 
@@ -469,6 +343,65 @@
                     </p>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Questions -->
+    <section id="duvidas-orcamento" class="py-14 sm:py-20 bg-creme-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 sm:space-y-4 mb-8 sm:mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-oliva-600">Dúvidas de orçamento</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-oliva-900">O que você precisa saber antes de começar</h2>
+                <p class="text-oliva-800/80 text-sm sm:text-base">Cada projeto é pensado de acordo com o momento e a necessidade do seu negócio.</p>
+            </div>
+
+            <div class="space-y-3 sm:space-y-4">
+                <details class="group bg-creme-100/70 border border-creme-200 rounded-2xl px-5 sm:px-6">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-sm sm:text-base font-bold text-oliva-900">
+                        Quanto custa um site?
+                        <i class="fa-solid fa-plus text-oliva-600 transition-transform group-open:rotate-45" aria-hidden="true"></i>
+                    </summary>
+                    <p class="pb-5 text-sm leading-relaxed text-oliva-800/80">O valor depende do tipo de site, da quantidade de páginas e dos recursos necessários. Depois de entender seu projeto, envio uma proposta clara e sem compromisso.</p>
+                </details>
+                <details class="group bg-creme-100/70 border border-creme-200 rounded-2xl px-5 sm:px-6">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-sm sm:text-base font-bold text-oliva-900">
+                        Quanto tempo leva para ficar pronto?
+                        <i class="fa-solid fa-plus text-oliva-600 transition-transform group-open:rotate-45" aria-hidden="true"></i>
+                    </summary>
+                    <p class="pb-5 text-sm leading-relaxed text-oliva-800/80">O prazo varia conforme o escopo e a velocidade de envio dos conteúdos. A estimativa fica combinada antes do início do trabalho.</p>
+                </details>
+                <details class="group bg-creme-100/70 border border-creme-200 rounded-2xl px-5 sm:px-6">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-sm sm:text-base font-bold text-oliva-900">
+                        Preciso ter textos e imagens prontos?
+                        <i class="fa-solid fa-plus text-oliva-600 transition-transform group-open:rotate-45" aria-hidden="true"></i>
+                    </summary>
+                    <p class="pb-5 text-sm leading-relaxed text-oliva-800/80">Ter esses materiais ajuda a agilizar o projeto, mas podemos organizar juntos o que já existe e o que ainda precisa ser preparado.</p>
+                </details>
+                <details class="group bg-creme-100/70 border border-creme-200 rounded-2xl px-5 sm:px-6">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-sm sm:text-base font-bold text-oliva-900">
+                        O domínio e a hospedagem estão incluídos?
+                        <i class="fa-solid fa-plus text-oliva-600 transition-transform group-open:rotate-45" aria-hidden="true"></i>
+                    </summary>
+                    <p class="pb-5 text-sm leading-relaxed text-oliva-800/80">Conversamos sobre essas necessidades na proposta. Assim você entende o que está incluído e quais custos recorrentes podem existir.</p>
+                </details>
+                <details class="group bg-creme-100/70 border border-creme-200 rounded-2xl px-5 sm:px-6">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-sm sm:text-base font-bold text-oliva-900">
+                        Posso pedir ajustes depois de ver o projeto?
+                        <i class="fa-solid fa-plus text-oliva-600 transition-transform group-open:rotate-45" aria-hidden="true"></i>
+                    </summary>
+                    <p class="pb-5 text-sm leading-relaxed text-oliva-800/80">Sim. O processo inclui momentos de alinhamento e ajustes previstos para que o resultado fique coerente com o seu negócio.</p>
+                </details>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="https://wa.me/5585985313082?text=Ol%C3%A1%20Gabriel!%20Tenho%20d%C3%BAvidas%20sobre%20o%20or%C3%A7amento%20de%20um%20site."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center gap-2 text-oliva-800 hover:text-oliva-600 font-bold text-sm sm:text-base">
+                    <i class="fa-brands fa-whatsapp text-emerald-700 text-lg" aria-hidden="true"></i>
+                    Ainda ficou com alguma dúvida? Fale comigo
+                </a>
             </div>
         </div>
     </section>
