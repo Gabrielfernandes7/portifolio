@@ -86,12 +86,14 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-8 pb-16 md:pt-20 md:pb-28 overflow-hidden">
+    <section id="inicio" class="relative pt-8 pb-12 md:pt-16 md:pb-20 overflow-hidden">
         <!-- Background accents -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[500px] md:w-[600px] h-[320px] sm:h-[500px] md:h-[600px] bg-oliva-100/60 rounded-full blur-3xl -z-10"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center space-y-6 sm:space-y-8">
+        <div class="absolute -top-24 -left-24 w-[320px] sm:w-[500px] h-[320px] sm:h-[500px] bg-oliva-100/60 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute top-1/2 -right-32 w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] bg-creme-200/70 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                 <!-- Badge -->
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-oliva-100 border border-oliva-200 text-oliva-800 text-[11px] sm:text-xs font-semibold uppercase tracking-wider">
                     <span class="w-2 h-2 rounded-full bg-oliva-600 animate-pulse"></span>
@@ -104,19 +106,19 @@
                 </h1>
 
                 <!-- Body Copy -->
-                <p class="text-base sm:text-lg md:text-xl text-oliva-800/80 leading-relaxed font-normal max-w-2xl mx-auto px-2">
+                <p class="text-base sm:text-lg md:text-xl text-oliva-800/80 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0 px-2 lg:px-0">
                     Crio websites modernos, elegantes e preparados para converter visitantes em clientes pagantes. Design sob medida, navegação fluida e velocidade máxima no celular, tablet e computador.
                 </p>
 
                 <!-- Hero CTAs -->
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 px-4 sm:px-0">
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4 px-4 sm:px-0 lg:px-0">
                     <a href="#portfolio" class="inline-flex items-center justify-center gap-3 bg-oliva-800 hover:bg-oliva-900 text-creme-50 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base min-h-[48px]">
                         <span>Ver Projetos Criados</span>
                         <i class="fa-solid fa-arrow-down text-xs sm:text-sm"></i>
                     </a>
-                    
+
                     <a href="https://wa.me/5585985313082?text=Ol%C3%A1%20Gabriel!%20Quero%20criar%20um%20site%20para%20o%20meu%20neg%C3%B3cio."
-                       target="_blank" 
+                       target="_blank"
                        class="inline-flex items-center justify-center gap-3 bg-creme-100 hover:bg-creme-200 border border-creme-300 text-oliva-900 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base min-h-[48px]">
                         <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
                         <span>Conversar no WhatsApp</span>
@@ -124,7 +126,7 @@
                 </div>
 
                 <!-- Proof highlights -->
-                <div class="pt-8 sm:pt-10 grid grid-cols-3 gap-2 sm:gap-4 border-t border-creme-200/80 max-w-2xl mx-auto text-center">
+                <div class="pt-6 sm:pt-8 grid grid-cols-3 gap-2 sm:gap-4 border-t border-creme-200/80 max-w-lg mx-auto lg:mx-0 text-center">
                     <div class="p-1 sm:p-2">
                         <p class="text-xl sm:text-3xl font-bold font-heading text-oliva-900">100%</p>
                         <p class="text-[11px] sm:text-sm text-oliva-800/70 font-medium leading-tight">Otimizado para Telas Mobile</p>
@@ -136,6 +138,42 @@
                     <div class="p-1 sm:p-2">
                         <p class="text-xl sm:text-3xl font-bold font-heading text-oliva-900">Sob Medida</p>
                         <p class="text-[11px] sm:text-sm text-oliva-800/70 font-medium leading-tight">Design Exclusivo</p>
+                    </div>
+                </div>
+                </div>
+
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-3 rounded-[2rem] bg-oliva-200/60 blur-2xl"></div>
+                        <div class="relative glass-card rounded-3xl p-4 overflow-visible custom-shadow">
+                            <div class="relative aspect-[4/5] rounded-2xl overflow-hidden border border-creme-200 bg-creme-100">
+                                <picture class="block h-full w-full">
+                                    <source srcset="assets/hero.webp" type="image/webp">
+                                    <img
+                                        src="assets/hero.png"
+                                        alt="Prévia visual de sites desenvolvidos por Gabriel Fernandes"
+                                        class="h-full w-full object-cover object-center"
+                                        width="1024"
+                                        height="1024"
+                                        loading="eager"
+                                        fetchpriority="high"
+                                    >
+                                </picture>
+                                <div class="absolute inset-x-0 bottom-0 bg-oliva-900/85 px-4 py-3 text-left text-creme-50 backdrop-blur-sm">
+                                    <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-oliva-200">Presença digital</p>
+                                    <p class="mt-1 text-sm font-semibold">Seu negócio com uma experiência profissional</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-8 -left-6 hidden sm:flex items-center gap-3 rounded-2xl border border-creme-200 bg-creme-50/95 px-4 py-3 shadow-lg backdrop-blur-md">
+                                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-oliva-100 text-oliva-700">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                </span>
+                                <div class="text-left">
+                                    <p class="text-[10px] font-bold uppercase tracking-wider text-oliva-600">Feito para você</p>
+                                    <p class="text-xs font-bold text-oliva-900">Mobile first</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
