@@ -26,6 +26,16 @@ h4,
     box-shadow: 0 25px 50px -12px rgba(45, 58, 41, 0.18);
 }
 
+input[type="checkbox"].feature-check {
+  accent-color: theme('colors.oliva.800');
+}
+
+/* opcional: check estilizado, caso queira algo mais “desenhado” */
+input[type="checkbox"].feature-check:checked {
+  background-color: theme('colors.oliva.800');
+  border-color: theme('colors.oliva.800');
+}
+
 @media (max-width: 1024px) {
     .mobile-touch-card .card-hover-overlay {
         opacity: 1 !important;
