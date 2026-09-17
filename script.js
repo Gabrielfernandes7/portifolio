@@ -31,11 +31,36 @@ let selectedSiteType = '';
 document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
+    const floatingWhatsAppBtn = document.getElementById('floatingWhatsApp');
 
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+    }
+
+    // Controla visibilidade do floating button (apenas mobile + após scroll)
+    if (floatingWhatsAppBtn) {
+        function updateFloatingButtonVisibility() {
+            const isMobile = window.innerWidth < 768;
+            const hasScrolled = window.scrollY > 300;
+            const orcamentoSection = document.getElementById('orcamento');
+            const orcamentoBounds = orcamentoSection?.getBoundingClientRect();
+            const inOrcamentoSection = orcamentoBounds &&
+                orcamentoBounds.top < window.innerHeight &&
+                orcamentoBounds.bottom > 0;
+
+            // Mostrar apenas em mobile, após scroll, e NÃO na seção de orçamento
+            if (isMobile && hasScrolled && !inOrcamentoSection) {
+                floatingWhatsAppBtn.style.display = 'flex';
+            } else {
+                floatingWhatsAppBtn.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('scroll', updateFloatingButtonVisibility);
+        window.addEventListener('resize', updateFloatingButtonVisibility);
+        updateFloatingButtonVisibility();
     }
 });
 
