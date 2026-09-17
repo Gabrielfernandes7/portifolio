@@ -44,7 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
         function updateFloatingButtonVisibility() {
             const isMobile = window.innerWidth < 768;
             const hasScrolled = window.scrollY > 300;
-            const inOrcamentoSection = document.getElementById('orcamento')?.getBoundingClientRect().top < window.innerHeight;
+            const orcamentoSection = document.getElementById('orcamento');
+            const orcamentoBounds = orcamentoSection?.getBoundingClientRect();
+            const inOrcamentoSection = orcamentoBounds &&
+                orcamentoBounds.top < window.innerHeight &&
+                orcamentoBounds.bottom > 0;
 
             // Mostrar apenas em mobile, após scroll, e NÃO na seção de orçamento
             if (isMobile && hasScrolled && !inOrcamentoSection) {
