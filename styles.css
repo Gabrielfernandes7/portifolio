@@ -36,6 +36,66 @@ input[type="checkbox"].feature-check:checked {
   border-color: theme('colors.oliva.800');
 }
 
+/* ===== Portfolio Carousel ===== */
+.carousel-track {
+    /* Esconde a scrollbar visualmente, mas mantém o scroll funcional */
+    scrollbar-width: none;              /* Firefox */
+    -ms-overflow-style: none;           /* IE/Edge antigo */
+    -webkit-overflow-scrolling: touch;  /* inércia no iOS */
+    scroll-padding-left: 0;
+}
+.carousel-track::-webkit-scrollbar {
+    display: none;                      /* Chrome/Safari */
+}
+
+/* Largura de cada slide (mobile-first) */
+.carousel-slide {
+    width: 85%;                         /* peek do próximo no mobile */
+}
+
+/* Acessibilidade: foco visível ao navegar por teclado */
+.carousel-track:focus-visible {
+    outline: 2px solid theme('colors.oliva.600');
+    outline-offset: 4px;
+    border-radius: 1rem;
+}
+
+@media (min-width: 640px) {              /* sm */
+    .carousel-slide { width: 68%; }
+}
+@media (min-width: 1024px) {             /* lg */
+    .carousel-slide { width: 47%; }     /* ~2 visíveis + peek no desktop */
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-track { scroll-behavior: auto; }
+    .carousel-slide img,
+    .carousel-slide {
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== Portfolio Overlay Touch Support ===== */
+/* Em devices touch (celulares/tablets), mostrar o overlay sempre visível */
+@media (hover: none) and (pointer: coarse) {
+    .carousel-overlay {
+        opacity: 1 !important;
+    }
+}
+
+/* Melhora visibilidade dos dots de navegação em mobile */
+@media (max-width: 640px) {
+    #portfolioDots {
+        gap: 6px !important;
+        margin-top: 12px;
+    }
+    #portfolioDots button {
+        height: 10px !important;
+        width: 10px !important;
+    }
+}
+
 @media (max-width: 1024px) {
     .mobile-touch-card .card-hover-overlay {
         opacity: 1 !important;

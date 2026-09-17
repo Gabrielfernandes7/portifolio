@@ -29,9 +29,9 @@ tailwind.config = {
 let selectedSiteType = '';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Lógica do Menu Mobile ---
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    const floatingWhatsAppBtn = document.getElementById('floatingWhatsApp');
 
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Controla visibilidade do floating button (apenas mobile + após scroll)
+    // --- Lógica do Botão Flutuante do WhatsApp ---
+    const floatingWhatsAppBtn = document.getElementById('floatingWhatsApp');
     if (floatingWhatsAppBtn) {
         function updateFloatingButtonVisibility() {
             const isMobile = window.innerWidth < 768;
@@ -50,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 orcamentoBounds.top < window.innerHeight &&
                 orcamentoBounds.bottom > 0;
 
-            // Mostrar apenas em mobile, após scroll, e NÃO na seção de orçamento
             if (isMobile && hasScrolled && !inOrcamentoSection) {
                 floatingWhatsAppBtn.style.display = 'flex';
             } else {
@@ -61,6 +61,95 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateFloatingButtonVisibility);
         window.addEventListener('resize', updateFloatingButtonVisibility);
         updateFloatingButtonVisibility();
+    }
+
+    // --- Lógica do Carrossel de Portfólio ---
+    const carousel = document.getElementById('portfolioCarousel');
+    const prevBtn = document.getElementById('portfolioPrev');
+    const nextBtn = document.getElementById('portfolioNext');
+    const dotsContainer = document.getElementById('portfolioDots');
+
+    if (carousel && prevBtn && nextBtn && dotsContainer) {
+        const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        if (slides.length > 0) {
+            // Cria os indicadores (dots) dinamicamente
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.setAttribute('aria-label', `Ir para o projeto ${i + 1}`);
+                dot.className = 'h-2 w-2 rounded-full bg-oliva-300 transition-all duration-300';
+                dot.addEventListener('click', () => scrollToSlide(i));
+                dotsContainer.appendChild(dot);
+            });
+            const dots = Array.from(dotsContainer.children);
+
+            // Funções utilitárias
+            const getGap = () => parseFloat(getComputedStyle(carousel).columnGap) || 24;
+            const getStep = () => slides[0].offsetWidth + getGap();
+
+            function scrollToSlide(index) {
+                carousel.scrollTo({ left: index * getStep(), behavior: 'smooth' });
+            }
+
+            function getCurrentIndex() {
+                return Math.round(carousel.scrollLeft / getStep());
+            }
+
+            // Atualiza o estado dos controles (setas e dots)
+            function updateCarouselState() {
+                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                const x = carousel.scrollLeft;
+
+                prevBtn.disabled = x < 4;
+                nextBtn.disabled = x > maxScroll - 4;
+
+                const currentIdx = getCurrentIndex();
+                dots.forEach((dot, i) => {
+                    const isActive = i === currentIdx;
+                    dot.classList.toggle('bg-oliva-800', isActive);
+                    dot.classList.toggle('w-6', isActive);
+                    dot.classList.toggle('bg-oliva-300', !isActive);
+                    dot.classList.toggle('w-2', !isActive);
+                });
+            }
+
+            // Eventos das setas
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: -getStep(), behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: getStep(), behavior: 'smooth' });
+            });
+
+            // Evento de scroll (com otimização)
+            let ticking = false;
+            carousel.addEventListener('scroll', () => {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(() => {
+                    updateCarouselState();
+                    ticking = false;
+                });
+            }, { passive: true });
+
+            // Evento de redimensionamento
+            window.addEventListener('resize', updateCarouselState);
+
+            // Navegação por teclado
+            carousel.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    nextBtn.click();
+                }
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    prevBtn.click();
+                }
+            });
+
+            // Inicializa o estado
+            updateCarouselState();
+        }
     }
 });
 

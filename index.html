@@ -180,72 +180,98 @@
                 </p>
             </div>
 
-            <!-- Portfolio Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+            <!-- Carousel -->
+            <div class="relative" role="region" aria-label="Portfólio de projetos" aria-roledescription="carrossel">
 
-                <!-- PROJECT 1: Lunavie Semijoias -->
-                <article class="bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col">
-                    <div class="min-h-44 sm:min-h-56 bg-amber-50 border-b border-amber-100 px-6 sm:px-8 py-7 sm:py-9 flex flex-col justify-between">
-                        <div class="flex items-center justify-between gap-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-amber-800">Catálogo digital</span>
-                            <i class="fa-solid fa-gem text-amber-700 text-xl sm:text-2xl" aria-hidden="true"></i>
-                        </div>
-                        <p class="font-heading text-2xl sm:text-3xl font-bold text-amber-950 max-w-sm">Produtos apresentados com delicadeza e clareza.</p>
-                    </div>
-                    <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between gap-6">
-                        <div>
-                            <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Lunavie Semijoias</h3>
-                            <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed"><strong>Desafio:</strong> Produtos bonitos, mas só apresentados no Instagram. <strong>Solução:</strong> Catálogo digital profissional onde clientes conseguem ver as peças com clareza, preços e como entrar em contato.</p>
-                        </div>
-                        <a href="https://lunavie-semijoais.netlify.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-bold px-5 py-3 rounded-xl transition-colors text-sm min-h-[44px]">
-                            Ver projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </article>
+                <!-- Setas (desktop) -->
+                <button type="button"
+                        id="portfolioPrev"
+                        aria-label="Projeto anterior"
+                        class="hidden lg:flex absolute top-1/2 -translate-y-1/2 -left-5 xl:-left-7 z-20 h-11 w-11 items-center justify-center rounded-full bg-creme-50 border border-creme-300 text-oliva-800 shadow-lg hover:bg-oliva-800 hover:text-creme-50 hover:border-oliva-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-creme-50 disabled:hover:text-oliva-800 disabled:hover:border-creme-300">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                        id="portfolioNext"
+                        aria-label="Próximo projeto"
+                        class="hidden lg:flex absolute top-1/2 -translate-y-1/2 -right-5 xl:-right-7 z-20 h-11 w-11 items-center justify-center rounded-full bg-creme-50 border border-creme-300 text-oliva-800 shadow-lg hover:bg-oliva-800 hover:text-creme-50 hover:border-oliva-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-creme-50 disabled:hover:text-oliva-800 disabled:hover:border-creme-300">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
 
-                <!-- PROJECT 2: Dolce Legal Catálogo Digital -->
-                <article class="bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col">
-                    <div class="min-h-44 sm:min-h-56 bg-rose-50 border-b border-rose-100 px-6 sm:px-8 py-7 sm:py-9 flex flex-col justify-between">
-                        <div class="flex items-center justify-between gap-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-rose-800">Cardápio digital</span>
-                            <i class="fa-solid fa-cake-candles text-rose-700 text-xl sm:text-2xl" aria-hidden="true"></i>
-                        </div>
-                        <p class="font-heading text-2xl sm:text-3xl font-bold text-rose-950 max-w-sm">Um caminho simples entre o produto e o pedido.</p>
-                    </div>
-                    <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between gap-6">
-                        <div>
-                            <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Catálogo Digital Dolce Legal</h3>
-                            <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed"><strong>Desafio:</strong> Cardápio em PDF pelo WhatsApp, difícil de atualizar e manter organizado. <strong>Solução:</strong> Catálogo digital que reduz confusão, facilita visualização e pedidos direto pelo WhatsApp.</p>
-                        </div>
-                        <a href="https://catalogo-digital-dolcelegal.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-bold px-5 py-3 rounded-xl transition-colors text-sm min-h-[44px]">
-                            Ver projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </article>
+                <!-- Track de scroll -->
+                <div id="portfolioCarousel"
+                    class="carousel-track flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4">
 
-                <!-- PROJECT 3: Espaço Aprimore -->
-                <article class="bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col">
-                    <div class="min-h-44 sm:min-h-56 bg-purple-50 border-b border-purple-100 px-6 sm:px-8 py-7 sm:py-9 flex flex-col justify-between">
-                        <div class="flex items-center justify-between gap-4">
-                            <span class="text-xs font-bold uppercase tracking-widest text-purple-800">Site Institucional</span>
-                            <i class="fa-solid fa-spa text-purple-700 text-xl sm:text-2xl" aria-hidden="true"></i>
+                    <!-- PROJECT 1: Lunavie Semijoias -->
+                    <article class="carousel-slide group bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col snap-start shrink-0">
+                        <div class="relative w-full h-48 sm:h-56 bg-amber-100 overflow-hidden bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('assets/projetos/catalogo-loja-semijoias-desktop.png');">
+                            <div class="carousel-overlay absolute inset-0 bg-amber-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 sm:p-8">
+                                <div class="flex items-center justify-between gap-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-amber-200">Catálogo digital</span>
+                                    <i class="fa-solid fa-gem text-amber-300 text-xl sm:text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="font-heading text-xl sm:text-2xl font-bold text-creme-50 max-w-sm">Produtos apresentados com delicadeza e clareza.</p>
+                            </div>
                         </div>
-                        <p class="font-heading text-2xl sm:text-3xl font-bold text-purple-950 max-w-sm">Presença profissional centralizada e acessível.</p>
-                    </div>
-                    <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between gap-6">
-                        <div>
-                            <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Espaço Aprimore</h3>
-                            <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed"><strong>Desafio:</strong> Clínica estética com informações dispersas, difícil agendamento e presença online inconsistente. <strong>Solução:</strong> Site institucional com serviços, profissionais e integração facilitada para contato e agendamento.</p>
+                        <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between gap-6">
+                            <div>
+                                <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Lunavie Semijoias</h3>
+                                <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed"><strong>Desafio:</strong> Produtos bonitos, mas só apresentados no Instagram. <strong>Solução:</strong> Catálogo digital profissional onde clientes conseguem ver as peças com clareza, preços e como entrar em contato.</p>
+                            </div>
+                            <a href="https://lunavie-semijoais.netlify.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-bold px-5 py-3 rounded-xl transition-colors text-sm min-h-[44px]">
+                                Ver projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                            </a>
                         </div>
-                        <a href="https://espaco-aprimore.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-bold px-5 py-3 rounded-xl transition-colors text-sm min-h-[44px]">
-                            Ver projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </article>
+                    </article>
 
+                    <!-- PROJECT 2: Dolce Legal Catálogo Digital -->
+                    <article class="carousel-slide group bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col snap-start shrink-0">
+                        <div class="relative w-full h-48 sm:h-56 bg-rose-100 overflow-hidden bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('assets/projetos/cardapio-digital-dolcelegal-desktop.png');">
+                            <div class="carousel-overlay absolute inset-0 bg-rose-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 sm:p-8">
+                                <div class="flex items-center justify-between gap-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-rose-200">Cardápio digital</span>
+                                    <i class="fa-solid fa-cake-candles text-rose-300 text-xl sm:text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="font-heading text-xl sm:text-2xl font-bold text-creme-50 max-w-sm">Um caminho simples entre o produto e o pedido.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between gap-6">
+                            <div>
+                                <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Cardápio Digital Dolce Legal</h3>
+                                <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed"><strong>Desafio:</strong> Cardápio em PDF pelo WhatsApp, difícil de atualizar e manter organizado. <strong>Solução:</strong> Catálogo digital que reduz confusão, facilita visualização e pedidos direto pelo WhatsApp.</p>
+                            </div>
+                            <a href="https://catalogo-digital-dolcelegal.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-bold px-5 py-3 rounded-xl transition-colors text-sm min-h-[44px]">
+                                Ver projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 3: Espaço Aprimore -->
+                    <article class="carousel-slide group bg-creme-50 rounded-2xl sm:rounded-3xl border border-creme-200 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col snap-start shrink-0">
+                        <div class="relative w-full h-48 sm:h-56 bg-purple-100 overflow-hidden bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('assets/projetos/clinica-estetica-aprimore-desktop.png');">
+                            <div class="carousel-overlay absolute inset-0 bg-purple-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 sm:p-8">
+                                <div class="flex items-center justify-between gap-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-purple-200">Site Institucional</span>
+                                    <i class="fa-solid fa-spa text-purple-300 text-xl sm:text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="font-heading text-xl sm:text-2xl font-bold text-creme-50 max-w-sm">Presença profissional centralizada e acessível.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between gap-6">
+                            <div>
+                                <h3 class="text-xl sm:text-2xl font-bold font-heading text-oliva-900 mb-2">Espaço Aprimore</h3>
+                                <p class="text-oliva-800/80 text-xs sm:text-sm leading-relaxed"><strong>Desafio:</strong> Clínica estética com informações dispersas, difícil agendamento e presença online inconsistente. <strong>Solução:</strong> Site institucional com serviços, profissionais e integração facilitada para contato e agendamento.</p>
+                            </div>
+                            <a href="https://espaco-aprimore.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-50 font-bold px-5 py-3 rounded-xl transition-colors text-sm min-h-[44px]">
+                                Ver projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Dots indicadores (mobile) -->
+                <div id="portfolioDots" class="flex lg:hidden justify-center gap-2 mt-4" aria-hidden="true"></div>
             </div>
-
-
         </div>
     </section>
 
@@ -407,8 +433,11 @@
 
             <div class="bg-creme-50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-creme-300 shadow-lg space-y-6 sm:space-y-8">
                 <!-- Step 1: Tipo de site -->
-                <div>
-                    <label class="block text-xs sm:text-sm font-bold text-oliva-900 mb-3">1. Qual tipo de site você precisa?</label>
+                <div class="p-4 sm:p-5 rounded-xl bg-oliva-50/40 border border-oliva-100">
+                    <label class="flex items-center gap-2 text-xs sm:text-sm font-bold text-oliva-900 mb-3">
+                        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-oliva-800 text-creme-50 text-[11px] font-bold">1</span>
+                        Qual tipo de site você precisa?
+                    </label>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3" id="siteTypeContainer">
                         <button type="button" onclick="selectOption('siteType', 'Landing Page de Vendas')" class="calc-btn p-3.5 sm:p-4 rounded-xl border border-creme-300 text-left hover:border-oliva-600 transition-all font-medium text-xs sm:text-sm text-oliva-900 bg-white min-h-[52px]">
                             <i class="fa-solid fa-bullseye text-oliva-600 mb-1 sm:mb-2 block text-base sm:text-lg"></i>
@@ -429,8 +458,11 @@
                 </div>
 
                 <!-- Step 2: Funcionalidades -->
-                <div>
-                    <label class="block text-xs sm:text-sm font-bold text-oliva-900 mb-3">2. Recursos desejados:</label>
+                <div class="p-4 sm:p-5 rounded-xl bg-oliva-50/40 border border-oliva-100">
+                    <label class="flex items-center gap-2 text-xs sm:text-sm font-bold text-oliva-900 mb-3">
+                        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-oliva-800 text-creme-50 text-[11px] font-bold">2</span>
+                        Recursos desejados:
+                    </label>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3">
                         <label class="flex items-center gap-2.5 p-3 bg-white rounded-xl border border-creme-300 text-xs font-medium text-oliva-900 cursor-pointer min-h-[44px] hover:border-oliva-400 transition-colors">
                             <input type="checkbox" value="Integração WhatsApp" class="feature-check accent-oliva-800 w-4 h-4 rounded focus:outline-none focus:ring-2 focus:ring-oliva-600 focus:ring-offset-0 cursor-pointer">
@@ -452,8 +484,11 @@
                 </div>
 
                 <!-- Step 3: Nome da empresa -->
-                <div>
-                    <label for="clientName" class="block text-xs sm:text-sm font-bold text-oliva-900 mb-2">3. Nome da sua empresa ou negócio:</label>
+                <div class="p-4 sm:p-5 rounded-xl bg-oliva-50/40 border border-oliva-100">
+                    <label for="clientName" class="flex items-center gap-2 text-xs sm:text-sm font-bold text-oliva-900 mb-2">
+                        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-oliva-800 text-creme-50 text-[11px] font-bold">3</span>
+                        Nome da sua empresa ou negócio:
+                    </label>
                     <input type="text" id="clientName" placeholder="Ex: Minha Loja / Meu Consultório" class="w-full p-3.5 bg-white rounded-xl border border-creme-300 text-xs sm:text-sm focus:outline-none focus:border-oliva-600 min-h-[44px]">
                 </div>
 
